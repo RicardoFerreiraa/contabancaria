@@ -1,8 +1,11 @@
 package conta;
 
 import java.util.Scanner;
+
 import conta.model.Conta;
 import conta.util.Cores;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
 
@@ -12,6 +15,31 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
+
+		//TODO Teste da classe conta
+		Conta c1 = new Conta(1, 123, 1, "Ricardo", 10000.0f);
+		c1.visualizar();
+		c1.sacar(1200.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+
+		//TODO teste da classe conta corrente
+		ContaCorrente cr1 = new ContaCorrente(2, 5747, 2, "Jubileu", 15000.0f, 1000.0f);
+		cr1.visualizar();
+		cr1.sacar(1200.0f);
+		cr1.visualizar();
+		cr1.depositar(5000.0f);
+		cr1.visualizar();
+
+		//TODO teste da calsse conta poupança
+		ContaPoupanca cp1 = new ContaPoupanca(1, 123, 1, "Mariscleuza", 10000.0f, 15);
+		cp1.visualizar();
+		cp1.sacar(1200.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
+
 
 		while(true) {
 
@@ -82,25 +110,17 @@ public class Menu {
 				System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
 				break;
 			}
-
-			// Teste da Classe Conta
-
-			Conta c1 = new Conta(1, 123, 1, "Ricardo", 10000.0f);
-			c1.visualizar();
-			c1.sacar(12000.0f);
-			c1.visualizar();
-			c1.depositar(5000.0f);
-			c1.visualizar();
 		}
+
 	}
 
 	public static void sobre() {
-		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por: ");
-		System.out.println("Ricardo Silva Ferreira - ricardo.silva_ferreira@hotmail.com");
-		System.out.println("github.com/ricardorawn");
-		System.out.println("*********************************************************");
+		System.out.println("|*************************************************************|");
+		System.out.println("|Projeto Desenvolvido por:                                    |");
+		System.out.println("|Ricardo S. Ferreira - ricardo.silva_ferreira@hotmail.com     |");
+		System.out.println("|github.com/ricardoferreiraa                                  |");
+		System.out.println("|*************************************************************|");
+
 	}
 
 }
-
